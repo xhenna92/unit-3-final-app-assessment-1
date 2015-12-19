@@ -7,11 +7,30 @@
 //
 
 #import "C4QViewController.h"
+#import "C4QColorPickerViewController.h"
 
-@interface C4QViewController ()
+@interface C4QViewController ()<ColorPassingDelegate>
 
 @end
 
 @implementation C4QViewController
+
+-(void)viewDidLoad{
+
+    [super viewDidLoad];
+
+}
+
+-(void)userDidPickColor:(UIColor *)color{
+    self.view.backgroundColor =color;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([segue.destinationViewController isKindOfClass:[C4QColorPickerViewController class]]) {
+        C4QColorPickerViewController *dvc= segue.destinationViewController;
+        dvc.delegate = self;
+    }
+}
 
 @end

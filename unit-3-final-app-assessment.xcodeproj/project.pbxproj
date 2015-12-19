@@ -18,6 +18,8 @@
 		8D8753131C24774800BBD328 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8753111C24774800BBD328 /* LaunchScreen.storyboard */; };
 		8DA03F741C2499F400328B53 /* C4QCatFactsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA03F731C2499F400328B53 /* C4QCatFactsDetailViewController.m */; };
 		DD8FD6DEC146B4B1C1F45D98 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A44461502C751D156694EAA4 /* libPods.a */; };
+		F0AA18621C25C65800AFD73D /* CatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AA18601C25C65800AFD73D /* CatTableViewCell.m */; };
+		F0AA18631C25C65800AFD73D /* CatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AA18611C25C65800AFD73D /* CatTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		8DA03F721C2499F400328B53 /* C4QCatFactsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4QCatFactsDetailViewController.h; sourceTree = "<group>"; };
 		8DA03F731C2499F400328B53 /* C4QCatFactsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4QCatFactsDetailViewController.m; sourceTree = "<group>"; };
 		A44461502C751D156694EAA4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0AA185F1C25C65800AFD73D /* CatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatTableViewCell.h; sourceTree = "<group>"; };
+		F0AA18601C25C65800AFD73D /* CatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatTableViewCell.m; sourceTree = "<group>"; };
+		F0AA18611C25C65800AFD73D /* CatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CatTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,9 @@
 				8D610E9D1C2477EB00AADDC2 /* C4QViewController.m */,
 				8D610E961C2477EB00AADDC2 /* C4QColorPickerViewController.h */,
 				8D610E971C2477EB00AADDC2 /* C4QColorPickerViewController.m */,
+				F0AA185F1C25C65800AFD73D /* CatTableViewCell.h */,
+				F0AA18601C25C65800AFD73D /* CatTableViewCell.m */,
+				F0AA18611C25C65800AFD73D /* CatTableViewCell.xib */,
 				8D610E941C2477EB00AADDC2 /* C4QCatFactsTableViewController.h */,
 				8D610E951C2477EB00AADDC2 /* C4QCatFactsTableViewController.m */,
 				8DA03F721C2499F400328B53 /* C4QCatFactsDetailViewController.h */,
@@ -157,6 +165,7 @@
 				TargetAttributes = {
 					8D8752FF1C24774700BBD328 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 788Q6NYZ88;
 					};
 				};
 			};
@@ -183,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0AA18631C25C65800AFD73D /* CatTableViewCell.xib in Resources */,
 				8D8753131C24774800BBD328 /* LaunchScreen.storyboard in Resources */,
 				8D8753101C24774800BBD328 /* Assets.xcassets in Resources */,
 				8D87530E1C24774700BBD328 /* Main.storyboard in Resources */,
@@ -244,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0AA18621C25C65800AFD73D /* CatTableViewCell.m in Sources */,
 				8D8753081C24774700BBD328 /* AppDelegate.m in Sources */,
 				8D610EA01C2477EB00AADDC2 /* C4QCatFactsTableViewController.m in Sources */,
 				8D8753051C24774700BBD328 /* main.m in Sources */,
@@ -361,10 +372,13 @@
 			baseConfigurationReference = 4298908874A5133FD8BE086A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "unit-3-final-app-assessment/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikekavouras.unit-3-final-app-assessment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -373,10 +387,13 @@
 			baseConfigurationReference = 4292FCC8B28330B5275CBFBD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "unit-3-final-app-assessment/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikekavouras.unit-3-final-app-assessment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
