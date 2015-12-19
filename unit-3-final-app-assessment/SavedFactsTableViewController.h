@@ -1,5 +1,5 @@
 //
-//  CatTableViewCell.h
+//  SavedFactsTableViewController.h
 //  unit-3-final-app-assessment
 //
 //  Created by Henna Ahmed on 12/19/15.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CatTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *factLabel;
-@property (nonatomic) NSString *catFact;
+@interface SavedFactsTableViewController : UITableViewController
+
 @end

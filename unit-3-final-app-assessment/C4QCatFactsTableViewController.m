@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "CatTableViewCell.h"
 #import "C4QCatFactsDetailViewController.h"
+#import "SavedFactsTableViewController.h"
 
 #define CAT_API_URL @"http://catfacts-api.appspot.com/api/facts?number=100"
 
@@ -47,7 +48,6 @@
         NSError *error;
         NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
         
-        //NSLog(@"%@", jsonDict);
         NSArray *facts = [jsonDict objectForKey:@"facts"];
         
         for ( NSString* fact in facts ) {
@@ -65,6 +65,23 @@
 }
 
 
+
+- (IBAction)viewSavedCatFacts:(UIBarButtonItem *)sender {
+    
+    SavedFactsTableViewController *vc = (SavedFactsTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"SavedCatFactsDVC"];
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:vc];
+    navController.navigationBar.topItem.title =  @"Saved Cat Facts";
+    navController.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView:)];
+    
+    [self.navigationController presentViewController:navController animated:YES completion:nil];
+    
+}
+
+- (void) dismissView:(id)sender {
+
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -79,17 +96,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"catFactIdentifier"];
-    
+    cell.catFact =[self.modelData objectAtIndex:indexPath.row];
     cell.factLabel.text= [self.modelData objectAtIndex:indexPath.row];
-
+    cell.factLabel.textAlignment = NSTextAlignmentJustified;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     C4QCatFactsDetailViewController *controller = (C4QCatFactsDetailViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"CatFactsDVC"];
-    [self.navigationController pushViewController:controller animated:YES];
     controller.catFact = [self.modelData objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:controller animated:YES];
+    
 }
 
 
